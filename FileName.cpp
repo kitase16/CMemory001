@@ -4,10 +4,10 @@
 struct CMemory {
 	typedef std::int16_t PinWord;
 	enum ALU {None,Add,Sub,Mul,Div,Mod,And,Or,Nand,Nor,Not,Xor,Nxor};
-	enum IO { In, Out };
+	enum IO { in, out };
 	enum Data { Int, Float, Char, Bool ,String};
 
-	std::intmax_t Work[512*1024] = {};
+	std::intmax_t Work[512] = {};
 	std::int16_t Pool[2][128 * 1024] = { {} ,{} };
 
 	PinWord Out = 0;
@@ -28,9 +28,11 @@ void Run(CMemory& mem) {
 	std::cout << "Output: " << mem.Out << std::endl;
 }
 
-void main() {
+int main() {
 	CMemory mem;
 	Setup(mem, 42); // Example input
 	Run(mem);
+
+	return 0;
 }
 
