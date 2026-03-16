@@ -7,7 +7,7 @@ struct CMemory {
 	enum IO { In, Out };
 	enum Data { Int, Float, Char, Bool ,String};
 
-	std::intmax_t Work[512] = {};
+	std::intmax_t Work[512*1024] = {};
 	std::int16_t Pool[2][128 * 1024] = { {} ,{} };
 
 	PinWord Out = 0;
