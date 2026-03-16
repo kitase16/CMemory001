@@ -1,12 +1,34 @@
 #include <iostream>
 #include <cstdint>
 
+template<class I,class C>
+struct IC {
+	I In = {};
+	C MidA={};
+	C MidB = {};
+	C MidC = {};
+	I Out = {};
+};
+
+template<class C=std::int16_t, std::intmax_t S=3>
+struct Chip {
+	C Chip[S] = { {}, };
+};
+
 template<class Int>
 struct PinIO{
 	Int In = {};
-	std::int16_t Mid = {};
+	//std::int16_t Mid = {};
 	Int Out = {};
 };
+
+template<class C,class I=std::int8_t, int Size=3 >
+struct TIC {//noizy noizy... but good.
+	Chip<C, Size> Chips;
+	PinIO<I> Pins;
+};
+
+
 
 struct CMemory {
 	typedef std::int16_t PinWord;
