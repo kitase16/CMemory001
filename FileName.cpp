@@ -4,6 +4,7 @@
 template<class Int>
 struct PinIO{
 	Int In = {};
+	std::int16_t Mid = {};
 	Int Out = {};
 };
 
